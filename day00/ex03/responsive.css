@@ -1,0 +1,78 @@
+body{
+	background-color: white;
+}
+h1{
+	color: #191970;
+	font-size: 3vw;
+}
+table {
+	width: 80%;
+	 height: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
+td{
+	width:5%;
+	padding-top: auto;
+}
+.num{
+	float: left;
+	font-size: 0.5vw;
+	margin: 0;
+}
+.num_legend{
+	text-align: left;
+	font-size: 0.8vw;
+}
+.num_count{
+	text-align: center;
+	font-size: 0.8vw;
+}
+.element{
+	text-align: center;
+	font-size: 1.2vw;
+	font-weight: bold;
+	margin: 0.5vw;
+}
+.mass{
+	float: right;
+	font-size: 0.5vw;
+	margin: 0;
+}
+.spacing{
+	margin-top: 40%;
+}
+.alkalimetal{
+	background-color: #A52A2A;
+}
+.alkalineearthmetal{
+	background-color: #DEB887;
+}
+.lanthanide{
+	background-color: #DDA0DD;
+}
+.actinide{
+	background-color: #FF69B4;
+}
+.transitionmetal{
+	background-color: #F08080;
+}
+.post-transitionmetal{
+	background-color: #808080;
+}
+.metalloid{
+	background-color: #BDB76B;
+}	
+.nonmetal{
+	background-color: #FFFF00;
+}
+.noblegas{
+	background-color: #c1feff;
+}
+.unknownchemicalproperties{
+	background-color: #A9A9A9;
+}
+.cropped {
+	max-width: 70%;
+	height: auto;
+}
