@@ -1,5 +1,5 @@
 body{
-    background: #FFDAB9;
+    background: #fcba03;
     font-family: sans-serif;
 }
 ul{
@@ -11,7 +11,7 @@ ul li{
     float:left;
     width: 200px;
 	height: 40px;
-	border: 4px solid #87CEFA;
+	border: 4px solid white;
 	border-radius: 10px;
     background-color: #D3D3D3;
     opacity: .8;
@@ -21,17 +21,17 @@ ul li{
 	border: 1px solid #FFDAB9;
 }
 ul li:hover{
-    background: #ADD8E6;
+    background: white;
 	color: white;
 	border-radius: 10px;
 }
 ul li a{
     text-decoration: none;
-    color: 		#00008B;
+    color: 		rgb(255, 17, 0);
     display: block;
 }
 ul li a:hover{
-	background-color: #B0E0E6;
+	background-color: white;
 	border-radius: 10px;
 }
 ul li ul li{
