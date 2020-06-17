@@ -10,10 +10,10 @@
 		{
 			$temp = explode(":", $elem);
 			if (!strcmp($key, $temp[0]) && count($temp) == 2)
-				$result = $temp[1];
+				echo $temp[1]."\n";
+				exit();
 		}
 		$i++;
 	}
-	if ($result)
-		echo $result."\n";
+	echo "\n";
 ?>

@@ -7,8 +7,9 @@
 			echo "Wrong Format\n";
 			exit(-1);
 		}
-		
-		if ((preg_match("/(^[L|l]undi|^[M|m]ardi|^[M|m]ercredi|^[J|j]eudi|^[V|v]endredi|^[S|s]amedi|^[D|d]imanche)( )([1-9]{1}|[0-3][0-9])( )([J|j]anvier|[F|f][é|e]vrier|[M|m]ars|[A|a]vril|[M|m]ai|[J|j]uin|[J|j]uillet|[A|a]o[û|u]t|[S|s]eptembre|[O|o]ctobre|[N|n]ovembre|[D|d][é|e]cembre)( )([1-2]{1}[0-9]{3})( )([0-2]{1}[0-9]{1}:[0-2]{1}[0-9]{1}:[0-6]{1}[0-9]{1})$/", $argv[1])) == 1)
+		$argv[1] = preg_replace('/é/', 'e', $argv[1]);
+		$argv[1] = preg_replace('/û/', 'u', $argv[1]);
+		if ((preg_match("/(^[L|l]undi|^[M|m]ardi|^[M|m]ercredi|^[J|j]eudi|^[V|v]endredi|^[S|s]amedi|^[D|d]imanche)( )([1-9]{1}|[1-3]{1}[0-9]{1})( )([J|j]anvier|[F|f]evrier|[M|m]ars|[A|a]vril|[M|m]ai|[J|j]uin|[J|j]uillet|[A|a]out|[S|s]eptembre|[O|o]ctobre|[N|n]ovembre|[D|d]ecembre)( )([1-2]{1}[0-9]{3})( )([0-2]{1}[0-9]{1}:[0-6]{1}[0-9]{1}:[0-6]{1}[0-9]{1})$/", $argv[1])) == 1)
 		{
 			$arr = explode(" ", $argv[1]);
 			$time = explode(':', $arr[4]);
@@ -29,10 +30,6 @@
 			if (!$checkmonth)
 				$checkmonth = array_search($arr[2], $monthbig2);
 			$real_day = date('w', strtotime($arr[3]."-".$checkmonth."-".$arr[1]." ".$arr[4]));
-			// echo $real_day;
-			// echo $day;
-			// echo $checkmonth;
-			// echo arr[2];
 			if ($real_day != $day || !checkdate($checkmonth, $arr[1], $arr[3]))
 			{
 					echo "Wrong Format\n";
@@ -46,8 +43,6 @@
 			else
 			{
 				echo "Wrong Format\n";
-
-
 				exit(-1);
 			}
 		}

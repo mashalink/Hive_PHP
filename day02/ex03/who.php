@@ -2,7 +2,7 @@
 <?php
 	$fd = fopen("/var/run/utmpx", 'r');
 	date_default_timezone_set("Europe/Helsinki");
-	while($file = fread(($fd), 628))
+	while($file = fread(($fd), 628)) 
 	{
 		$type = unpack("i", $file, 296);
 		if ($type[1] == 7)
