@@ -4,7 +4,7 @@
 	{
 		if($tab["action"] == "set" && $tab["name"] != '' && $tab["value"] != '')
 		{
-			setcookie($tab["name"], $tab["value"], time() + (86400 * 30), '/');
+			setcookie($tab["name"], $tab["value"], time() + (60 * 60 * 24 * 30), '/');
 		}
 		if($tab["action"] == "get" && $tab["name"] != '' && !$tab["value"])
 		{
@@ -14,7 +14,7 @@
 		}
 		if($tab["action"] == "del" && $tab["name"] != '' && !$tab["value"])
 		{
-			setcookie($tab["name"], "", time() - 3600);
+			setcookie($tab["name"], "", time() - 1);
 		}
 	}
 ?>
