@@ -113,6 +113,7 @@ body {
 	height: 110px;
 	float: right;
 }
+
 #close
   {
 	margin-top: 80px;
@@ -173,6 +174,7 @@ body {
 	background: linear-gradient(#f0f0f0, #dcdcdc);
 	border: solid #9d969d 1px;
 }
+
 area {
 	outline: none;
 }
