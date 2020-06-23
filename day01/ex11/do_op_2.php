@@ -2,9 +2,7 @@
 <?php
 	function do_op($a, $b, $sign)
 	{		
-		if ($b == 0 && ($sign == '/' || $sign == '%'))
-			echo "Divider cannot be zero!\n";
-		else if ($sign == '+')
+		if ($sign == '+')
 			echo $a + $b."\n";
 		else if ($sign == '-')
 			echo $a - $b."\n";
