@@ -17,5 +17,5 @@
 			echo ($x % $y)."\n";
 	}
 	else
-		echo "Incorrect Parameters.\n";
+		echo "Incorrect Parameters\n";
 ?>
