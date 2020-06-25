@@ -1,17 +1,15 @@
 #!/usr/bin/php
 <?php
-    if($argc == 2 && file_exists($argv[1]))
-    {
-        $file_arr = file($argv[1]);
-        foreach($file_arr as $str)
-        {
-            if (preg_match('/(<a.*>.*<\/a>)/', $str, $matches) != 0)
-            {
-                preg_match_all('([\'"].*?[\'"]|[\>].*?[\<])', $matches[0], $matches1);
-                foreach ($matches1[0] as $up)
-                    $str = str_replace($up, strtoupper($up), $str);
-            }
-            echo "$str";
-        }
-    }
+if ($argc != 2)
+    exit();
+$content = file_get_contents($argv[1]);
+function a_to_upper($matched)
+{
+    $res = $matched[0];
+    $res = preg_replace_callback("/title=\"(.*?)\"/is", function ($text) { return "title=\"".strtoupper($text[1])."\""; }, $res);
+    $res = preg_replace_callback("/>.+?</s", function ($text) { return strtoupper($text[0]); }, $res);
+    return $res;
+}
+$content = preg_replace_callback("/<a.*?<\/a>/is", "a_to_upper", $content);
+echo $content;
 ?>
