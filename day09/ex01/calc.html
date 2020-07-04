@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        html, body {
+            height: 98%;
+            display: grid;
+            background-color: rgb(111, 65, 65);
+        }
+        #calc {
+            margin: auto;
+            font-size: 30px;
+        }
+        #calc * {
+            font-size: 20px;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid black;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="calc">
+        <input type="text" id="num1" required>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="num2" required>
+        <button type="submit">Try me!</button>
+    </form>
+    <script>
+
+
+		function getlength(number) {
+    		return number.toString().length;
+		}
+
+        function isValidNumber(num) {
+			if (num.length > 1 && num[0] == "0") {
+				return false;
+			}
+			num = Number(num);
+			console.log(num);
+            if (Number.isInteger(num) && num >= 0) {
+                return true;
+            }
+            return false;
+        }
+
+        function display(result) {
+            console.log(result);
+            alert(result);
+        }
+
+        window.setInterval(() => { alert('Please, use me...'); }, 30000);
+
+        document.getElementById('calc').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            const operator = document.getElementById('operator').value;
+            if (isValidNumber(num1) && isValidNumber(num2)) {
+				num1 = Number(num1);
+				num2 = Number(num2);
+				if ((operator == '/' || operator == '%') && num2 === 0) {
+                    display('It\'s over 9000!');
+                } else if (operator == '+') {
+                    display(num1 + num2);
+                } else if (operator == '-') {
+                    display(num1 - num2);
+                } else if (operator == '/') {
+                    display(num1 / num2);
+                } else if (operator == '*') {
+                    display(num1 * num2);
+                } else if (operator == '%') {
+                    display(num1 % num2);
+                }
+            } else {
+                alert('Error :(')
+            }
+        });
+    </script>
+</body>
+</html>
